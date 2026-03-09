@@ -3,9 +3,9 @@
   "private": true,
   "description": "Vonge template for CloudCannon",
   "scripts": {
-    "jekyll:install": "bundle config set --local path 'vendor/bundle' && BUNDLE_GEMFILE=site/Gemfile bundle install",
-    "build": "BUNDLE_GEMFILE=site/Gemfile bundle exec jekyll build --source site",
-    "start": "BUNDLE_GEMFILE=site/Gemfile bundle exec jekyll serve --source site --port 6060 --trace --unpublished",
+    "jekyll:install": "bundle config set --local path vendor/bundle && cross-env BUNDLE_GEMFILE=site/Gemfile bundle install",
+    "build": "cross-env BUNDLE_GEMFILE=site/Gemfile bundle exec jekyll build --source site",
+    "start": "cross-env BUNDLE_GEMFILE=site/Gemfile bundle exec jekyll serve --source site --port 6060 --trace --unpublished",
     "update-bookshop": "npx @bookshop/up@latest"
   },
   "repository": {
@@ -19,7 +19,10 @@
   },
   "homepage": "https://github.com/CloudCannon/vonge-jekyll-bookshop-template#readme",
   "dependencies": {
-    "@bookshop/jekyll-engine": "3.16.5",
-    "@bookshop/generate": "3.16.5"
+    "@bookshop/generate": "3.16.5",
+    "@bookshop/jekyll-engine": "^1.7.1"
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0"
   }
 }
