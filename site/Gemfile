@@ -5,6 +5,7 @@ gem "bigdecimal"
 gem "csv"
 gem "logger"
 gem "ostruct"
+gem "sass-embedded", "~> 1.69"
 gem "jekyll", "4.3.3"
 
 group :jekyll_plugins do
